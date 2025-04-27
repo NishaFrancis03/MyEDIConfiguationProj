@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 97%;
+  --foreground: 0 0% 13%;
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 13%;
+  --border: 0 0% 88%;
+  --input: 0 0% 88%;
+  --primary: 240 50% 48%;
+  --primary-foreground: 0 0% 100%;
+  --primary-light: 240 40% 57%;
+  --primary-dark: 240 60% 44%;
+  --secondary: 340 82% 52%;
+  --secondary-foreground: 0 0% 100%;
+  --secondary-light: 340 80% 62%;
+  --secondary-dark: 340 82% 38%;
+  --accent: 210 100% 54%;
+  --accent-foreground: 0 0% 100%;
+  --accent-light: 210 80% 64%;
+  --accent-dark: 210 100% 45%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --success: 122 39% 49%;
+  --warning: 36 100% 50%;
+  --info: 210 100% 54%;
+  --ring: 240 50% 48%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 0 0% 10%;
+  --foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 98%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 98%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --primary: 240 50% 48%;
+  --primary-foreground: 0 0% 100%;
+  --primary-light: 240 40% 57%;
+  --primary-dark: 240 60% 44%;
+  --secondary: 340 82% 52%;
+  --secondary-foreground: 0 0% 98%;
+  --secondary-light: 340 80% 62%;
+  --secondary-dark: 340 82% 38%;
+  --accent: 210 100% 54%;
+  --accent-foreground: 0 0% 98%;
+  --accent-light: 210 80% 64%;
+  --accent-dark: 210 100% 45%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+  --success: 122 39% 49%;
+  --warning: 36 100% 50%;
+  --info: 210 100% 54%;
+  --ring: 240 50% 48%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mapping-field {
+    @apply cursor-move transition-all duration-200;
+  }
+
+  .mapping-field:hover {
+    @apply bg-accent/10;
+  }
+
+  .mapping-line {
+    @apply stroke-primary stroke-2;
+    stroke-dasharray: 5, 5;
+  }
+
+  .mapping-line.active {
+    @apply stroke-secondary stroke-[3px];
+    stroke-dasharray: none;
+  }
+
+  .source-field.mapped {
+    @apply bg-accent/10 border-l-4 border-l-accent;
+  }
+
+  .target-field.mapped {
+    @apply bg-accent/10 border-l-4 border-l-secondary;
+  }
+
+  .drag-over {
+    @apply bg-green-500/10 border border-dashed border-green-500;
+  }
+
+  .json-key {
+    @apply text-secondary;
+  }
+
+  .json-string {
+    @apply text-green-500;
+  }
+
+  .json-number {
+    @apply text-accent;
+  }
+
+  .json-boolean {
+    @apply text-amber-500;
+  }
+
+  .json-null {
+    @apply text-muted-foreground;
+  }
+}
